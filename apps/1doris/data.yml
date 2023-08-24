@@ -1,0 +1,20 @@
+name: doris
+tags:
+    - 数据库
+title: doris
+type: 数据库
+description: doris
+additionalProperties:
+    key: doris
+    name: 1Doris
+    tags:
+        - Database
+    shortDescZh: doris数据库
+    shortDescEn: doris数据库
+    type: runtime
+    crossVersionUpdate: false
+    limit: 1
+    recommend: 4
+    website: https://www.mysql.com
+    github: https://www.mysql.com
+    document: https://www.mysql.com

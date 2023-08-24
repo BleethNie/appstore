@@ -1,0 +1,10 @@
+additionalProperties:
+    formFields:
+        - default: 9030
+          disabled: false
+          envKey: DORIS_FE_PORT
+          labelEn: Port
+          labelZh: 端口
+          required: true
+          rule: paramPort
+          type: number
