@@ -1,17 +1,21 @@
 version: '3'
 services:
-  answer:
+  grafana:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_HTTP}:3000"
     volumes:
-      - "${DATA_PATH}:/data"
-    image: answerdev/answer:1.1.1
+      - grafana_data:/var/lib/grafana
+    image: grafana/grafana:10.1.0
     labels:  
       createdBy: "Apps"
+
+volumes:
+  grafana_data:
+    external: true
 
 networks:  
   1panel-network:  

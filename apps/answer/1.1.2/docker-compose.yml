@@ -1,16 +1,15 @@
 version: '3'
 services:
-  domain-admin:
+  answer:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:8000"
+      - "${PANEL_APP_PORT_HTTP}:80"
     volumes:
-      - "${DATA_PATH}/database:/app/database"
-      - "${DATA_PATH}/logs:/app/logs"
-    image: mouday/domain-admin:v1.5.18
+      - "${DATA_PATH}:/data"
+    image: answerdev/answer:1.1.2
     labels:  
       createdBy: "Apps"
 
