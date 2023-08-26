@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  cube:
+    container_name: ${CONTAINER_NAME}
+    image: cubejs/cube:latest
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:4000
+      - 15432:15432
+    environment:
+      - CUBEJS_DEV_MODE=true
+    volumes:
+      - ./data:/cube/conf
+    network_mode: 1panel-network
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true

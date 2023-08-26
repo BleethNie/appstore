@@ -1,0 +1,20 @@
+name: cube
+tags:
+    - 工具
+title: 人人可用的开源数据可视化分析工具
+type: 工具
+description: 人人可用的开源数据可视化分析工具
+additionalProperties:
+    key: 1cube
+    name: 1cube
+    tags:
+        - Tool
+    shortDescZh: 开源的数据可视化分析工具
+    shortDescEn: 开源的数据可视化分析工具
+    type: tool
+    crossVersionUpdate: false
+    limit: 1
+    recommend: 4
+    website: https://cube.dev/
+    github: https://github.com/cube-js/cube
+    document: https://cube.dev/docs/product/getting-started/core/create-a-project
