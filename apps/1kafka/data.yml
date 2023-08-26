@@ -1,0 +1,20 @@
+name: kafka
+tags:
+    - 数据库
+title: kafka
+type: 数据库
+description: kafka
+additionalProperties:
+    key: 1kafka
+    name: 1kafka
+    tags:
+        - Database
+    shortDescZh: kafka
+    shortDescEn: kafka
+    type: runtime
+    crossVersionUpdate: false
+    limit: 1
+    recommend: 4
+    website: https://bitnami.com/
+    github: https://github.com/bitnami/containers.git
+    document: https://bitnami.com/
