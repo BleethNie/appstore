@@ -1,18 +1,22 @@
 version: '3'
 services:
-  chatgpt-next-web:
+  remmina:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTPS}:3001"
+    volumes:
+      - "${DATA_PATH}:/config"
     environment:
-      - "OPENAI_API_KEY=${API_KEY}"
-      - "CODE=${SECRET_KEY}"
-      - "PROXY_URL=${PROXY}"
-      - "BASE_URL=${API_BASE_URL}"
-    image: yidadaa/chatgpt-next-web:v2.9.4
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - CUSTOM_USER=${HTTP_USER}
+      - PASSWORD=${HTTP_PWD}
+    image: linuxserver/remmina:1.4.2
     labels:  
       createdBy: "Apps"
 
