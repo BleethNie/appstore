@@ -1,13 +1,17 @@
 version: '3'
 services:
-  element-web:
+  siyuan:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:80"
-    image: vectorim/element-web:v1.11.39
+      - "${PANEL_APP_PORT_HTTP}:6806"
+    volumes:
+      - "${DATA_PATH}:/siyuan/workspace"
+    user: "1000:1000"
+    command: "--workspace=/siyuan/workspace/"
+    image: b3log/siyuan:v2.10.2
     labels:  
       createdBy: "Apps"
 
