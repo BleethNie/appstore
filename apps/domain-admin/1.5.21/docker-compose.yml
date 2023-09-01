@@ -1,16 +1,16 @@
 version: '3'
 services:
-  music-tag-web:
+  domain-admin:
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:8001"
+      - "${PANEL_APP_PORT_HTTP}:8000"
     volumes:
-      - "${DATA_PATH}:/app/media:z"
-    command: /start
-    image: registry.cn-hangzhou.aliyuncs.com/charles0519/music_tag_web:1.2.4
+      - "${DATA_PATH}/database:/app/database"
+      - "${DATA_PATH}/logs:/app/logs"
+    image: mouday/domain-admin:v1.5.21
     labels:  
       createdBy: "Apps"
 
